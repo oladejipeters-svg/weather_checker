@@ -9,7 +9,7 @@ const errorMsg = document.querySelector("#errorMsg");
 const localT = document.querySelector("#localT");
 const weatherCondition = document.querySelector("#weatherCondition");
 
-const apiKey = "f833c4cd2ad1436fb98131537262403";
+const apiKey = "01ae56df82bd4b3fa15214115251901";
 
 function clearInput() {
   input.value = "";
