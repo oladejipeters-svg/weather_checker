@@ -21,21 +21,21 @@ function updateBackground(condition) {
   let imageUrl = "";
 
   if (c === "clear" || c === "sunny") {
-    imageUrl = "url('clearSunny.png')";
+    imageUrl = "url('images/clearsunny.png')";
   } else if (c === "partly cloudy") {
-    imageUrl = "url('partlyCloudy.png')";
+    imageUrl = "url('images/partlyCloudy.png')";
   } else if (c === "cloudy" || c === "overcast") {
-    imageUrl = "url('cloudy.png')";
+    imageUrl = "url('images/cloudy.png')";
   } else if (c === "rain" || c === "rainy") {
-    imageUrl = "url('rainy.png')";
+    imageUrl = "url('images/rainy.png')";
   } else if (c === "snow" || c === "Light snow") {
-    imageUrl = "url('snowy.png')";
+    imageUrl = "url('images/snowy.png')";
   } else if (c === "thunderstorm") {
-    imageUrl = "url('thunderstorm.png')";
+    imageUrl = "url('images/thunderstorm.png')";
   } else if (c === "fog" || c === "mist") {
-    imageUrl = "url('fog.png')";
+    imageUrl = "url('images/fog.png')";
   } else {
-    imageUrl = "url('myDefault.png')";
+    imageUrl = "url('images/myDefault.png')";
   }
 
   body.style.backgroundImage = imageUrl;
@@ -43,7 +43,6 @@ function updateBackground(condition) {
   body.style.backgroundRepeat = "no-repeat";
   body.style.backgroundPosition = "center";
 }
-
 
 async function submitHandler(event) {
   event.preventDefault();
@@ -80,7 +79,6 @@ async function submitHandler(event) {
     weatherCondition.textContent = `Weather Condition is - ${data.current.condition.text}`;
 
     updateBackground(data.current.condition.text);
-
 
     errorMsg.textContent = ""; // clear error
     clearInput();
