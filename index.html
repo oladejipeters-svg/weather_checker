@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./goodweather.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <h1>Welcome to our weather App</h1>
+
+      <form id="weatherForm">
+        <input
+          type="text"
+          name="city"
+          id="city"
+          placeholder="City Name"
+          value=""
+        />
+        <button type="submit" id="formBtn">Submit</button>
+      </form>
+      <div>
+        <h2 id="errorMsg"></h2>
+        <h2 id="cityName"></h2>
+        <p id="localT"></p>
+        <p id="temperature"></p>
+        <p id="humidity"></p>
+        <p id="windSpeed"></p>
+        <img src="" alt="" id="icon" />
+        <p id="weatherCondition"></p>
+      </div>
+    </section>
+    <footer>
+      <p>SP - Weather_Checker &reg;</p>
+    </footer>
+    <script src="./goodweather.js"></script>
+  </body>
+</html>
