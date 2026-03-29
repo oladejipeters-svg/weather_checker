@@ -58,6 +58,12 @@ async function submitHandler(event) {
 
     if (!response.ok) {
       errorMsg.textContent = "Error: Could not fetch weather data";
+      clearInput();
+      cityName.textContent = "";
+      localT.textContent = "";
+      temperature.textContent = "";
+      humidity.textContent = "";
+      windSpeed.textContent = "";
       return;
     }
 
