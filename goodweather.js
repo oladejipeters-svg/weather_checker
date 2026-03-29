@@ -9,7 +9,7 @@ const errorMsg = document.querySelector("#errorMsg");
 const localT = document.querySelector("#localT");
 const weatherCondition = document.querySelector("#weatherCondition");
 
-const networkVar = "f833c4cd2ad1436fb98131537262403";
+// const networkVar = "good";
 
 function clearInput() {
   input.value = "";
@@ -28,7 +28,7 @@ function updateBackground(condition) {
     imageUrl = "url('images/cloudy.png')";
   } else if (c === "rain" || c === "rainy") {
     imageUrl = "url('images/rainy.png')";
-  } else if (c === "snow" || c === "Light snow") {
+  } else if (c === "snow" || c === "light snow") {
     imageUrl = "url('images/snowy.png')";
   } else if (c === "thunderstorm") {
     imageUrl = "url('images/thunderstorm.png')";
@@ -44,26 +44,19 @@ function updateBackground(condition) {
   body.style.backgroundPosition = "center";
 }
 
-async function submitHandler(event) {
-  event.preventDefault();
+async function handler(req, res) {
+  const { city } = req.query;
 
-  const inputValue = input.value.trim();
-
-  if (inputValue === "") {
-    alert("Please enter a city name");
-    return;
+  if (!city) {
+    return res.status(400).json({ error: "City is required" });
   }
 
-  try {
-    // FIXED: URL must be inside quotes + template literal
-    const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${networkVar}&q=${inputValue}&aqi=no`,
-    );
+  const apiKey = process.env.WEATHER_API_KEY;
 
-    if (!response.ok) {
-      errorMsg.textContent = "Error: Could not fetch weather data";
-      return;
-    }
+  try {
+    const response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`,
+    );
 
     const data = await response.json();
 
