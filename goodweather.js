@@ -9,7 +9,7 @@ const errorMsg = document.querySelector("#errorMsg");
 const localT = document.querySelector("#localT");
 const weatherCondition = document.querySelector("#weatherCondition");
 
-const apiKey = "01ae56df82bd4b3fa15214115251901";
+const networkVar = "f833c4cd2ad1436fb98131537262403";
 
 function clearInput() {
   input.value = "";
@@ -57,7 +57,7 @@ async function submitHandler(event) {
   try {
     // FIXED: URL must be inside quotes + template literal
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${inputValue}&aqi=no`,
+      `http://api.weatherapi.com/v1/current.json?key=${networkVar}&q=${inputValue}&aqi=no`,
     );
 
     if (!response.ok) {
