@@ -19,7 +19,7 @@ function updateBackground(condition) {
   let imageUrl = "";
 
   if (c === "clear" || c === "sunny") {
-    imageUrl = "url('images/clearsunny.png')";
+    imageUrl = "url('images/clearSunny.png')";
   } else if (c === "partly cloudy") {
     imageUrl = "url('images/partlyCloudy.png')";
   } else if (c === "cloudy" || c === "overcast") {
