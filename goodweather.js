@@ -57,7 +57,7 @@ async function submitHandler(event) {
     const response = await fetch(`/api/weather?city=${inputValue}`);
 
     if (!response.ok) {
-      errorMsg.textContent = `Error: Could not fetch weather data for ${inputValue}`;
+      errorMsg.textContent = `Error: Could not fetch weather data for ${inputValue}, check the spelling.`;
       clearInput();
       cityName.textContent = "";
       localT.textContent = "";
