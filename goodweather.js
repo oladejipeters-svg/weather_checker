@@ -64,6 +64,7 @@ async function submitHandler(event) {
       temperature.textContent = "";
       humidity.textContent = "";
       windSpeed.textContent = "";
+      weatherCondition.textContent = "";
       return;
     }
 
